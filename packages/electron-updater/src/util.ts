@@ -32,6 +32,6 @@ export function getChannelFilename(channel: string): string {
 
 export function blockmapFiles(baseUrl: URL, oldVersion: string, newVersion: string): URL[] {
   const newBlockMapUrl = newUrlFromBase(`${baseUrl.pathname}.blockmap`, baseUrl)
-  const oldBlockMapUrl = newUrlFromBase(`${baseUrl.pathname.replace(new RegExp(escapeRegExp(newVersion), "g"), oldVersion)}.blockmap`, baseUrl)
+  const oldBlockMapUrl = newUrlFromBase(`${baseUrl.pathname.replace(new RegExp(escapeRegExp(oldVersion), "g"), newVersion)}.blockmap`, baseUrl)
   return [oldBlockMapUrl, newBlockMapUrl]
 }
