@@ -94,6 +94,8 @@ function doExecuteTasks(differentialDownloader: DifferentialDownloader, options:
       return
     }
 
+    console.log("JF: response \n" + JSON.stringify(response))
+
     const contentType = safeGetHeader(response, "content-type")
     const m = /^multipart\/.+?(?:; boundary=(?:(?:"(.+)")|(?:([^\s]+))))$/i.exec(contentType)
     if (m == null) {
