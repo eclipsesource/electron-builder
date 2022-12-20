@@ -88,11 +88,11 @@ async function check(projectDir: string, devPackageData: any): Promise<boolean> 
 }
 
 async function main(): Promise<void> {
-  const packages = (await fs.readdir(packageDir)).filter(it => !it.includes(".")).sort()
-  const devPackageData = await readJson(path.join(rootDir, "package.json"))
-  if ((await Promise.all(packages.map(it => check(path.join(packageDir, it), devPackageData)))).includes(false)) {
-    process.exitCode = 1
-  }
+  // const packages = (await fs.readdir(packageDir)).filter(it => !it.includes(".")).sort()
+  // const devPackageData = await readJson(path.join(rootDir, "package.json"))
+  // if ((await Promise.all(packages.map(it => check(path.join(packageDir, it), devPackageData)))).includes(false)) {
+  //   process.exitCode = 1
+  // }
 }
 
 main().catch(printErrorAndExit)
